@@ -1,0 +1,31 @@
+﻿@{
+}
+
+@model List<Musteri>
+
+<h4>Müşteri Listesi</h4>
+<hr />
+
+@*<ul>
+    @foreach (var musteri in Model)
+    {
+        <li><b>Adı:</b> @musteri.Adi | <b>Ülke:</b> @musteri.Ulke | <b>Sipariş sayısı: </b> @musteri.SiparisSayisi</li>
+    }
+</ul>*@
+
+
+<table class="table mt-5">
+    <tr>
+        <th>Adı</th>
+        <th>Ülke</th>
+        <th>#</th>
+    </tr>
+    @foreach (var musteri in Model)
+    {
+        <tr>
+            <td>@musteri.Adi</td>
+            <td>@musteri.Ulke</td>
+            <td><a href="/Musteri/Detay/@musteri.Id">detay</a></td>
+        </tr>
+    }
+</table>
