@@ -19,6 +19,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Musteri}/{action=Index}/{id?}");
+    pattern: "{controller=Form}/{action=Liste}/{id?}");
 
 app.Run();

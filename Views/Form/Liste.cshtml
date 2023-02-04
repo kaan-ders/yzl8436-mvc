@@ -1,0 +1,27 @@
+﻿@{
+}
+
+@model FormModel[]
+
+<div class="float-end">
+    <a href="/Form/Ekle" class="btn btn-primary">Ekle</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th> Adı </th>
+        <th> Kayıt Tarihi </th>
+        <th>İşlemler</th>
+    </tr>
+    @for (int i = 0; i < Model.Length; i++)
+    {
+        <tr>
+            <td>@Model[i].MusteriAdi</td>
+            <td>@Model[i].KayitTarihi</td>
+            <td>
+                <a href="/Form/Index/@i" target="_blank">detay</a>
+                <a href="/Form/Guncelle/@i" target="_blank">güncelle</a>
+            </td>
+        </tr>
+    }
+</table>

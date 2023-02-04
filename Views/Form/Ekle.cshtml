@@ -1,0 +1,26 @@
+﻿@{
+}
+
+@model FormModel
+
+<h3>Müşteri ekle</h3>
+
+<form class="mt-3" action="/Form/Ekle" method="post">
+    <div class="mb-3">
+        <label class="form-label">Adı</label>
+        <input type="text" class="form-control" asp-for="MusteriAdi">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Adresi</label>
+        <textarea rows="10" class="form-control" asp-for="Adresi"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Kayıt Tarihi</label>
+        <input type="date" class="form-control" asp-for="KayitTarihi">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Sipariş Sayısı</label>
+        <input type="number" class="form-control" asp-for="SiparisSayisi">
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
