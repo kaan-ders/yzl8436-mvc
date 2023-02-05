@@ -5,7 +5,7 @@ namespace MvcApp.Controllers
 {
     public class FormController : Controller
     {
-        FormModel[] models = new FormModel[]
+        private List<FormModel> models = new List<FormModel>
         {
             new FormModel
             {
@@ -52,6 +52,8 @@ namespace MvcApp.Controllers
             //};
 
             //modeli dbye yaz
+
+            models.Add(model);
 
             return View();
         }
