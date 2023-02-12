@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvcApp.Models;
+using MvcApp.Servis;
 
 namespace MvcApp.Controllers
 {
     public class MusteriController : Controller
     {
+        private IDatabase _database;
+
+        public MusteriController(IDatabase database)
+        {
+            _database = database;
+        }
+
         private List<Musteri> Musteriler = new List<Musteri>
         {
             new Musteri
