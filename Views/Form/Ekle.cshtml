@@ -15,6 +15,15 @@
         <textarea rows="10" class="form-control" asp-for="Adresi"></textarea>
     </div>
     <div class="mb-3">
+        <label class="form-label">Ülke</label>
+        <select asp-for="Ulke" class="form-control">
+            @foreach (Ulke ulke in ViewBag.Ulkeler /*(List<Ulke>)ViewData["Ulkeler"]*/)
+            {
+                <option value="@ulke.Adi">@ulke.Adi</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
         <label class="form-label">Kayıt Tarihi</label>
         <input type="date" class="form-control" asp-for="KayitTarihi">
     </div>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvcApp.Models;
+using System.Collections;
 
 namespace MvcApp.Controllers
 {
@@ -39,6 +40,33 @@ namespace MvcApp.Controllers
         //get- > gösterme
         public IActionResult Ekle()
         {
+            List<Ulke> ulkeler = new List<Ulke>
+            {
+                new Ulke
+                {
+                    Adi = "Türkiye"
+                },
+                new Ulke
+                {
+                    Adi = "Almanya"
+                },
+                new Ulke
+                {
+                    Adi = "Amerika"
+                }
+            };
+
+            //ViewData["Ulkeler"] = ulkeler;
+
+            ViewBag.Ulkeler = ulkeler;
+
+            /*ArrayList list = new ArrayList();
+            list.Add("Ahmet");
+            list.Add(12);
+            list.Add(new Ulke());
+
+            int sayi1 = Convert.ToInt32(list[1]) + 10;*/
+
             return View();
         }
 
@@ -57,7 +85,6 @@ namespace MvcApp.Controllers
             //modeli dbye yaz
 
             models.Add(model);
-
             return View();
         }
 

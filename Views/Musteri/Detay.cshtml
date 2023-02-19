@@ -1,5 +1,5 @@
 ﻿@{
-    int sayi1 = 0;
+    
 }
 
 @model Musteri
@@ -25,7 +25,7 @@
             Sipariş sayısı:
         </th>
         <td>
-            @Model.SiparisSayisi
+            @Model.SiparisSayisi / @ViewData["ToplamStok"] adet
         </td>
     </tr>
 </table>

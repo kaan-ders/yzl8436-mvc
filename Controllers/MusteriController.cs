@@ -51,6 +51,9 @@ namespace MvcApp.Controllers
                 }
             }
 
+            ViewData["ToplamStok"] = 600;
+            //key - value -> dictionary, hashtable
+
             return View(musteri);
         }
     }
