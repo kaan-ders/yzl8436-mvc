@@ -1,5 +1,8 @@
 ﻿@{
-    
+    var menuModel = new MenuModel
+    {
+        BilgeAdamTarget = "_blank"
+    };
 }
 
 @model Musteri
@@ -7,25 +10,33 @@
 <h4>Müşteri Detay</h4>
 <hr />
 
-<table class="table">
-    <tr>
-        <th>
-            Adı:
-        </th>
-        <td> @Model.Adi</td>
-    </tr>
-    <tr>
-        <th>
-            Ülke:
-        </th>
-        <td> @Model.Ulke </td>
-    </tr>
-    <tr>
-        <th>
-            Sipariş sayısı:
-        </th>
-        <td>
-            @Model.SiparisSayisi / @ViewData["ToplamStok"] adet
-        </td>
-    </tr>
-</table>
+<div class="row">
+    <div class="col-3">
+        <partial name="Menu.cshtml" model="menuModel" />
+    </div>
+    <div class="col-9">
+        @*<table class="table">
+            <tr>
+                <th>
+                    Adı:
+                </th>
+                <td> @Model.Adi</td>
+            </tr>
+            <tr>
+                <th>
+                    Ülke:
+                </th>
+                <td> @Model.Ulke </td>
+            </tr>
+            <tr>
+                <th>
+                    Sipariş sayısı:
+                </th>
+                <td>
+                    @Model.SiparisSayisi / @ViewData["ToplamStok"] adet
+                </td>
+            </tr>
+        </table>*@
+        <partial name="Musteri.cshtml" model="Model" />
+    </div>
+</div>

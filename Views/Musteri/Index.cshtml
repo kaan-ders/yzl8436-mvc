@@ -1,4 +1,8 @@
 ﻿@{
+    var menuModel = new MenuModel
+            {
+                BilgeAdamTarget = "_self"
+            };
 }
 
 @model List<Musteri>
@@ -16,20 +20,39 @@
 @*
     Razor - template engine
     render -> saf html
+
 *@
 
-<table class="table mt-5">
-    <tr>
+<div class="row">
+    <div class="col-3">
+        <partial name="Menu.cshtml" model="menuModel" />
+    </div>
+    <div class="col-9">
+        @*<table class="table mt-5">
+        <tr>
         <th>Adı</th>
         <th>Ülke</th>
         <th>#</th>
-    </tr>
-    @foreach (var musteri in Model)
-    {
-        <tr>
-            <td>@musteri.Adi</td>
-            <td>@musteri.Ulke</td>
-            <td><a href="/Musteri/Detay/@musteri.Id">detay</a></td>
         </tr>
-    }
-</table>
+        @foreach (var musteri in Model)
+        {
+        <tr>
+        <td>@musteri.Adi</td>
+        <td>@musteri.Ulke</td>
+        <td><a href="/Musteri/Detay/@musteri.Id">detay</a></td>
+        </tr>
+        }
+        </table>*@
+        @foreach (var musteri in Model)
+        {
+            <div class="card mt-3">
+                <div class="card-body">
+                    <partial name="Musteri.cshtml" model="musteri" />
+                </div>
+                <div class="card-footer text-end">
+                    <a href="/Musteri/Detay/@musteri.Id" class="btn btn-sm btn-primary">Detay</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
